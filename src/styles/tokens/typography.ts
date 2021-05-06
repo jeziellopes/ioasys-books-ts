@@ -3,8 +3,8 @@ const fallbackFonts =
 
 export const typography = {
   family: {
-    primary: `Silka, ${fallbackFonts}`,
-    secondary: `Silka, ${fallbackFonts}`,
+    primary: `Heebo, ${fallbackFonts}`,
+    secondary: `Heebo, ${fallbackFonts}`,
   },
   sizes: {
     '2xs': '10px',

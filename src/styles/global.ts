@@ -4,6 +4,7 @@ import {
   DefaultTheme,
   GlobalStyleComponent,
 } from 'styled-components';
+import defaultFonts from './fonts';
 
 type GlobalStyleProps = {
   blockScroll?: boolean;
@@ -25,6 +26,8 @@ const GlobalStyles: GlobalStyleComponent<
     box-sizing: border-box;
     height: 100%;
     scroll-behavior: smooth;
+
+    ${defaultFonts}
   }
 
   body {
