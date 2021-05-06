@@ -1,0 +1,11 @@
+import * as S from './{{pascalCase name}}.styles';
+
+export type {{pascalCase name}}Props = {
+  children?: React.ReactChild;
+};
+
+export const {{pascalCase name}} = ({ children }: {{pascalCase name}}Props) => (
+  <S.Wrapper>
+    <h1>{children}</h1>
+  </S.Wrapper>
+);

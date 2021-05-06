@@ -1,0 +1,13 @@
+import { Meta, Story } from '@storybook/react/types-6-0';
+import { {{pascalCase name}}, {{pascalCase name}}Props } from './{{pascalCase name}}';
+
+export default {
+  {{#if contextName}}
+  title: '{{type}}/{{pascalCase contextName}}/{{pascalCase name}}',
+  {{else}}
+  title: '{{type}}/{{pascalCase name}}',
+  {{/if}}
+  component: {{pascalCase name}},
+} as Meta;
+
+export const Default: Story<{{pascalCase name}}Props> = (args) => <{{pascalCase name}} {...args} />;
