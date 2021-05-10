@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Main from 'pages/Main';
+import SignIn from 'pages/auth/SignIn/SignIn';
+import Blank from 'pages/Blank';
 
 export interface RouteProps {
   children?: React.ReactNode;
@@ -10,7 +11,9 @@ export interface RouteProps {
 const AppRoutes = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Main />} />
+      <Route path="*" element={<Blank />} />
+      <Route path="/" element={<Blank />} />
+      <Route path="/sign-in" element={<SignIn />} />
     </Routes>
   </BrowserRouter>
 );
