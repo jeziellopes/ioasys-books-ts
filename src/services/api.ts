@@ -18,9 +18,7 @@ api.interceptors.request.use(async (initialConfig) => {
 });
 
 api.interceptors.response.use(
-  (response) => {
-    return response;
-  },
+  (response) => response,
   async (error) => {
     const originalRequest = error.config;
     if (error.response.status === 401) {
