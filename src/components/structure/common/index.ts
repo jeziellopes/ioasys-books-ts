@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-import { ThemeType } from 'interfaces/theme';
-import { fadeAnimations } from '../../../styles/animations';
+import styled, { css, DefaultTheme } from 'styled-components';
+import { fadeAnimations } from 'styles/animations';
 
 export const Row = styled.div`
   display: flex;
@@ -22,7 +21,7 @@ export const LogoHeader = styled(Row)`
 `;
 
 type LogoTitleProps = {
-  theme: ThemeType;
+  theme: DefaultTheme;
   light: boolean;
 };
 

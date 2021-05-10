@@ -1,14 +1,13 @@
 import { render } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { MemoryRouter } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import theme from 'styles/theme';
+import ThemeProvider from 'providers/theme';
 
-export const renderWithTheme = (children: React.ReactNode) =>
+export const renderWithTheme = (children: React.ReactChild) =>
   render(
     <IntlProvider locale="en-US" onError={() => undefined}>
       <MemoryRouter>
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </MemoryRouter>
     </IntlProvider>,
   );
