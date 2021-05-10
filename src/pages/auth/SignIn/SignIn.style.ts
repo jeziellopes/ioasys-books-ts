@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import background from '../../../assets/images/background.png';
-import { Column } from '../../../components/structure/common';
+import { Column } from 'components/structure/common';
+import background from 'assets/images/background.png';
 
 export const Wrapper = styled.div`
   background-image: url(${background});

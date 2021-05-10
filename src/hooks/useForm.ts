@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Form from '../services/form';
+import Form from 'services/form';
 
 const useForm = () => {
   const [values, setValues] = useState({ email: '', password: '' });

@@ -4,7 +4,7 @@ import {
   DefaultTheme,
   GlobalStyleComponent,
 } from 'styled-components';
-import background from '../assets/images/background_light.png';
+import background from 'assets/images/background_light.png';
 import defaultFonts from './fonts';
 
 type GlobalStyleProps = {
@@ -25,7 +25,7 @@ const GlobalStyles: GlobalStyleComponent<
 
   html {
     background-image: url(${background});
-    height: 100%;
+    height: ${({ theme }) => theme.sizes.screen.height}px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,7 +38,7 @@ const GlobalStyles: GlobalStyleComponent<
       padding: 0;
       margin: 0;
       font-family: ${theme.typography.family.primary};
-      overflow: ${blockScroll ? 'hidden' : 'initial'};
+      /* overflow: ${blockScroll ? 'hidden' : 'initial'}; */
 
       ::-webkit-scrollbar {
         display: none;

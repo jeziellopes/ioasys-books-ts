@@ -1,4 +1,4 @@
-import { EMAIL_PATTERN, PASSWORD_PATTERN } from '../constants/regex';
+import { EMAIL_PATTERN, PASSWORD_PATTERN } from 'constants/regex';
 
 class Validation {
   static isValidEmail = (value: string) => EMAIL_PATTERN.test(value);

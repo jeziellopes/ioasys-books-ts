@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router';
+import { useForm } from 'hooks';
+import { TextInput } from 'components/form';
+import { Logo, FormError } from 'components/structure';
+import { LogoHeader, LogoTitle } from 'components/structure/common';
 import { ROUTES } from 'constants/urls';
-import { TextInput } from '../../../components/form';
-import { Logo, FormError } from '../../../components/structure';
-import { LogoHeader, LogoTitle } from '../../../components/structure/common';
-import { useForm } from '../../../hooks';
 import * as S from './SignIn.style';
 
 const SignIn = () => {
