@@ -18,6 +18,15 @@ export const typography = {
     '3xl': '56px',
     '4xl': '64px',
   },
+  fontWeight: {
+    thin: 100,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    extraBold: 800,
+    black: 900,
+  },
   lineHeight: {
     sm: '16px',
     base: '24px',

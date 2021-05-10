@@ -4,6 +4,7 @@ import {
   DefaultTheme,
   GlobalStyleComponent,
 } from 'styled-components';
+import background from '../assets/images/background_light.png';
 import defaultFonts from './fonts';
 
 type GlobalStyleProps = {
@@ -23,32 +24,49 @@ const GlobalStyles: GlobalStyleComponent<
   }
 
   html {
-    box-sizing: border-box;
+    background-image: url(${background});
     height: 100%;
-    scroll-behavior: smooth;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-    ${defaultFonts}
+  html, body, #root {
+    ${({ theme, blockScroll = false }) => css`
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: ${theme.typography.family.primary};
+      overflow: ${blockScroll ? 'hidden' : 'initial'};
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      ${defaultFonts}
+    `}
   }
 
   body {
-    ${({ theme, blockScroll = false }) => css`
-      font-family: ${theme.typography.family.primary};
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-scrolling: touch;
-      height: 100%;
-      overflow: ${blockScroll ? 'hidden' : 'initial'};
-    `}
+    font-family: 'Heebo', sans-serif;
   }
 
   a {
     text-decoration: none;
   }
 
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+
   button {
     appearance: none;
     border: none;
-    background: transparent;
+    /* background: transparent; */
     color: inherit;
     cursor: pointer;
     font: inherit;

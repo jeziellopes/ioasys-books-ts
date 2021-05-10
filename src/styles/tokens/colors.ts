@@ -1,12 +1,12 @@
 export const colors = {
   primary: {
-    main: '#EC008C',
+    main: '#AB2680',
     hover: '#EC008C',
     active: '#EC008C',
   },
   secondary: {
-    main: '#EC008C',
-    hover: '#EC008C',
+    main: '#B22E6F',
+    hover: '#D0608D',
     active: '#EC008C',
   },
   tertiary: {
@@ -34,6 +34,9 @@ export const colors = {
       info: 'rgba(0, 0, 0, 0.5)',
       line: 'rgba(0, 0, 0, 0.2)',
     },
+    grayOpacity: 'rgba(255, 255, 255, 0.32)',
+    darkslategray: '#333333',
+    darkgray: '#999999',
   },
   background: {
     dark: {
@@ -43,6 +46,9 @@ export const colors = {
     light: {
       input: 'rgba(255, 255, 255, 0.5)',
       button: 'rgba(255, 255, 255, 0.01)',
+    },
+    input: {
+      blackOpacity: 'rgba(0, 0, 0, 0.32)',
     },
     outlet: '#202020',
     public: {
