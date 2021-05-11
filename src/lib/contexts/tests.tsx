@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
+import ThemeProvider from 'providers/theme';
 import { IntlProvider } from 'react-intl';
 import { MemoryRouter } from 'react-router-dom';
-import ThemeProvider from 'providers/theme';
 
 export const renderWithTheme = (children: React.ReactChild) =>
   render(
