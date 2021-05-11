@@ -1,10 +1,20 @@
 import { useState, useEffect } from 'react';
 import Form from 'services/form';
+import { SignInType } from 'interfaces/auth';
+import { FormErrors } from 'interfaces/form';
 
-const useForm = () => {
+type UseFormType = {
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  validated: boolean;
+  values: SignInType;
+  error: boolean;
+  errors: FormErrors | null;
+};
+
+const useForm = (): UseFormType => {
   const [values, setValues] = useState({ email: '', password: '' });
   const [error, setError] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors | null>(null);
   const [isEmpty, setIsEmpty] = useState(true);
 
   useEffect(() => {
@@ -17,10 +27,10 @@ const useForm = () => {
     setErrors(errors);
   }, [isEmpty, values]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues((values) => ({
       ...values,
-      [event.target.type]: event.target.value,
+      [e.target.type]: e.target.value,
     }));
   };
 

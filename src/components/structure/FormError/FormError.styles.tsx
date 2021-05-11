@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 export const ErrorMessage = styled.span`
   ${({ theme }) => css`
     position: absolute;
-    top: 20px;
+    top: 24px;
     left: 20px;
     color: ${theme.colors.neutral.white};
     font-weight: ${theme.typography.fontWeight.bold};

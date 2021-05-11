@@ -5,6 +5,7 @@ import { useForm } from 'hooks';
 import { TextInput } from 'components/form';
 import { Logo, FormError } from 'components/structure';
 import { LogoHeader, LogoTitle } from 'components/structure/common';
+import { SignInType } from 'interfaces/auth';
 import { ROUTES } from 'constants/urls';
 import * as S from './SignIn.style';
 
@@ -19,18 +20,14 @@ const SignIn = () => {
     handleChange,
   } = useForm();
 
-  type UserSignIn = {
-    email: string;
-    password: string;
-  };
-
-  const signIn = (user: UserSignIn) => console.log('signin');
+  const signIn = (user: SignInType) => console.log(user);
 
   useEffect(() => {
     if (signed) navigate(ROUTES.app.getLink('books'));
   }, [navigate, signed]);
 
   const handleSignIn = () => {
+    console.log(validated, !signed);
     if (validated && !signed) signIn({ email, password });
   };
 
