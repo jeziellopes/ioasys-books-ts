@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SignIn from 'pages/auth/SignIn/SignIn';
+import SignIn from 'pages/auth/SignIn';
 import Blank from 'pages/Blank';
 
 export interface RouteProps {
