@@ -16,7 +16,7 @@ export function* signIn({ payload }: ReturnType<typeof login>) {
         firstname: data.name.split(' ')[0],
         email: data.email,
       });
-      yield put({ type: loginSuccess.type });
+      yield put({ type: loginSuccess.type, payload: data });
     }
   } catch (error) {
     yield put({ type: loginError.type });

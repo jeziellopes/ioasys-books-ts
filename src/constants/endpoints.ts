@@ -6,3 +6,4 @@ const authPrefix = 'auth';
 export const baseURL = `${base}/${version}/`;
 export const REFRESH_TOKEN = `${baseURL}/${authPrefix}/refresh-token`;
 export const SIGN_IN = `${baseURL}/auth/sign-in`;
+export const BOOKS = `${baseURL}/books`;

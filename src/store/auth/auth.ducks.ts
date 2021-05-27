@@ -1,8 +1,15 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
-import { SignInType } from 'interfaces/auth';
+import { SignInType, UserType } from 'interfaces/auth';
 
-const INITIAL_STATE = {
-  user: {},
+export type AuthState = {
+  user: UserType;
+  error: boolean;
+  signed: boolean;
+  resetRequest: boolean;
+};
+
+const INITIAL_STATE: AuthState = {
+  user: {} as UserType,
   error: false,
   signed: false,
   resetRequest: false,
@@ -16,9 +23,14 @@ export const logout = createAction('LOGOUT');
 export default createReducer(INITIAL_STATE, {
   [login.type]: (state, action) => ({ ...state, user: action.payload }),
   [loginError.type]: (state) => ({ ...state, error: true }),
-  [loginSuccess.type]: (state) => ({ ...state, error: false, signed: true }),
+  [loginSuccess.type]: (state, action) => ({
+    ...state,
+    error: false,
+    signed: true,
+    user: action.payload,
+  }),
   [logout.type]: () => ({
-    user: {},
+    user: {} as UserType,
     error: false,
     signed: false,
     resetRequest: false,
