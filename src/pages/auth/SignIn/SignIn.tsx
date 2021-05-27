@@ -8,7 +8,7 @@ import { Logo, FormError } from 'components/structure';
 import { LogoHeader, LogoTitle } from 'components/structure/common';
 import { SignInType } from 'interfaces/auth';
 import { ROUTES } from 'constants/urls';
-import * as S from './SignIn.style';
+import * as S from './SignIn.styles';
 
 const SignIn = () => {
   const signed = useAppSelector((state) => state.auth?.signed);
