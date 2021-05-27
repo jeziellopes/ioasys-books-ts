@@ -16,6 +16,8 @@ export const colors = {
   },
   neutral: {
     black: '#000000',
+    darkgray: '#999999',
+    darkgrayopacity: 'rgba(255, 255, 255, 0.4)',
     filter: 'rgba(0, 0, 0, 0.6)',
     modal: 'rgba(0, 0, 0, 0.8)',
     materialVideoOverlay: 'rgba(0, 0, 0, 0.4)',

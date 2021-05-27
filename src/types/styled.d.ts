@@ -28,6 +28,8 @@ declare module 'styled-components' {
       tertiary: ColorType;
       neutral: {
         black: string;
+        darkgray: string;
+        darkgrayopacity: string;
         filter: string;
         modal: string;
         materialVideoOverlay: string;
@@ -147,6 +149,12 @@ declare module 'styled-components' {
         width: number;
         height: number;
       };
+    };
+    shadows: {
+      bookCardShadows: string;
+      bookCoverShadows: string;
+      bookModalShadows: string;
+      bookCoverModalShadows: string;
     };
   }
 }
