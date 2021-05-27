@@ -22,7 +22,7 @@ export const LogoHeader = styled(Row)`
 
 type LogoTitleProps = {
   theme: DefaultTheme;
-  light: boolean;
+  light?: boolean;
 };
 
 export const LogoTitle = styled.label<LogoTitleProps>`
