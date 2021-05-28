@@ -1,5 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import api from 'services/api';
+import Auth from 'services/auth';
 import { setAccessToken, removeStorage } from 'lib/contexts/auth';
 import { SIGN_IN } from 'constants/endpoints';
 import { login, loginError, loginSuccess, logout } from './auth.ducks';
@@ -16,7 +17,7 @@ export function* signIn({ payload }: ReturnType<typeof login>) {
         firstname: data.name.split(' ')[0],
         email: data.email,
       });
-      yield put({ type: loginSuccess.type, payload: data });
+      yield put({ type: loginSuccess.type, payload: Auth.getUserFrom(data) });
     }
   } catch (error) {
     yield put({ type: loginError.type });

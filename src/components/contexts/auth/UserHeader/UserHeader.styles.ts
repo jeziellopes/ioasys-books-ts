@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as CS from 'components/structure';
 import { fadeAnimations } from 'styles/animations';
 
-export const Container = styled(CS.Row)`
+export const Wrapper = styled(CS.Row)`
   height: 32px;
 `;
 
@@ -21,7 +21,7 @@ export const WelcomeLabel = styled.label`
 `;
 
 export const UserLabel = styled.label`
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  font-weight: ${({ theme }) => theme.typography.sizes.sm};
   margin-right: unset;
 
   @media (max-width: 700px) {

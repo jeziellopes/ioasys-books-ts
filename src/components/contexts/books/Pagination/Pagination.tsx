@@ -1,10 +1,14 @@
-import React from 'react';
 import { useScreenSize } from 'hooks';
 import useBooks from 'hooks/useBooks';
 import * as CS from 'components/structure';
 import * as S from './Pagination.styles';
 
-export default function Pagination() {
+export type PaginationProps = {
+  children?: React.ReactChild;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const Pagination = ({ children }: PaginationProps) => {
   const {
     books,
     canGoBack,
@@ -37,4 +41,4 @@ export default function Pagination() {
   ) : (
     <S.Wrapper />
   );
-}
+};

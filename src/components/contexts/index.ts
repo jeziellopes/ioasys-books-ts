@@ -1,5 +1,6 @@
-import BooksList from './BooksList';
-import Pagination from './Pagination';
-import UserHeader from './UserHeader/UserHeader';
+import { UserHeader } from './auth/UserHeader';
+import { BookModal } from './books/BookModal';
+import { BooksList } from './books/BooksList';
+import { Pagination } from './books/Pagination/Pagination';
 
-export { BooksList, Pagination, UserHeader };
+export { BookModal, BooksList, Pagination, UserHeader };

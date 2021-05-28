@@ -33,5 +33,10 @@ export const LogoTitle = styled.label<LogoTitleProps>`
     line-height: 36px;
     margin-left: 17px;
     cursor: pointer;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
   `};
 `;

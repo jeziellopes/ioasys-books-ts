@@ -7,6 +7,7 @@ export type BooksState = {
   page: number;
   amount: number;
   selected: number | null;
+  loading: boolean;
   loaded: boolean;
   error: boolean;
 };
@@ -15,8 +16,9 @@ const INITIAL_STATE: BooksState = {
   data: {} as Books,
   book: null,
   page: 1,
-  amount: 25,
+  amount: 12,
   selected: null,
+  loading: false,
   loaded: false,
   error: false,
 };
@@ -35,12 +37,14 @@ export default createReducer(INITIAL_STATE, {
     ...state,
     book: state.selected ? state.data?.data[state.selected] : null,
   }),
-  [loadBooks.type]: (state, action) => ({ ...state, books: action.payload }),
-  [loadBooksError.type]: (state) => ({ ...state, error: true }),
-  [loadBooksSuccess.type]: (state) => ({
+  [loadBooks.type]: (state) => ({ ...state, loading: true }),
+  [loadBooksError.type]: (state) => ({ ...state, loading: false, error: true }),
+  [loadBooksSuccess.type]: (state, action) => ({
     ...state,
-    error: false,
+    data: action.payload,
+    loading: false,
     loaded: true,
+    error: false,
   }),
   [init.type]: () => INITIAL_STATE,
 });

@@ -19,8 +19,7 @@ export function* loadBooksSaga() {
     const { page, amount }: BooksState = yield select(getPage);
     const { data } = yield api.get(BOOKS, { params: { page, amount } });
 
-    yield put({ type: loadBooks.type, payload: data });
-    yield put({ type: loadBooksSuccess.type });
+    yield put({ type: loadBooksSuccess.type, payload: data });
   } catch (error) {
     yield put({ type: loadBooksError.type });
   }
@@ -28,6 +27,7 @@ export function* loadBooksSaga() {
 
 export function* watchSagas() {
   yield takeLatest(loginSuccess.type, loadBooksSaga);
+  yield takeLatest(loadBooks.type, loadBooksSaga);
   yield takeLatest(setPage.type, loadBooksSaga);
   yield takeLatest(loadBooksSuccess.type, setBook);
 }
