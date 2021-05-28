@@ -28,6 +28,7 @@ declare module 'styled-components' {
       tertiary: ColorType;
       neutral: {
         black: string;
+        darkslategray: string;
         darkgray: string;
         darkgrayopacity: string;
         filter: string;
