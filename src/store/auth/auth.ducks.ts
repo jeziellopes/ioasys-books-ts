@@ -16,12 +16,14 @@ const INITIAL_STATE: AuthState = {
 };
 
 export const login = createAction<SignInType, 'LOGIN'>('LOGIN');
+export const setUser = createAction<SignInType, 'SET_USER'>('SET_USER');
 export const loginError = createAction('LOGIN_ERROR');
 export const loginSuccess = createAction('LOGIN_SUCCESS');
 export const logout = createAction('LOGOUT');
 
 export default createReducer(INITIAL_STATE, {
   [login.type]: (state, action) => ({ ...state, user: action.payload }),
+  [setUser.type]: (state, action) => ({ ...state, user: action.payload }),
   [loginError.type]: (state) => ({ ...state, error: true }),
   [loginSuccess.type]: (state, action) => ({
     ...state,

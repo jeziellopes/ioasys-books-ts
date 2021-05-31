@@ -1,9 +1,12 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
+import { RootState } from 'store';
+import { loadBooksSuccess } from 'store/books/books.ducks';
 import api from 'services/api';
 import Auth from 'services/auth';
-import { setAccessToken, removeStorage } from 'lib/contexts/auth';
+import { setAccessToken, removeStorage, getUserData } from 'lib/contexts/auth';
+import { UserType } from 'interfaces/auth';
 import { SIGN_IN } from 'constants/endpoints';
-import { login, loginError, loginSuccess, logout } from './auth.ducks';
+import { login, loginError, loginSuccess, logout, setUser } from './auth.ducks';
 
 export function* signIn({ payload }: ReturnType<typeof login>) {
   try {
@@ -28,7 +31,20 @@ export function* logoutUser() {
   yield call(removeStorage);
 }
 
+export const getUser = (state: RootState): UserType => state.auth.user;
+
+export function* reloadUser() {
+  const user: UserType = yield select(getUser);
+
+  if (!user.shortName) {
+    const sessionUser: UserType = yield call(getUserData);
+
+    yield put({ type: setUser.type, payload: Auth.getUserFrom(sessionUser) });
+  }
+}
+
 export function* watchSagas() {
   yield takeLatest(login.type, signIn);
   yield takeLatest(logout.type, logoutUser);
+  yield takeLatest(loadBooksSuccess.type, reloadUser);
 }
