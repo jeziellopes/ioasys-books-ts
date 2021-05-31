@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppSelector } from 'hooks';
+import { isAuthenticated } from 'lib/contexts/auth';
 import { ROUTES } from 'constants/urls';
 
 /**
@@ -8,11 +8,10 @@ import { ROUTES } from 'constants/urls';
  */
 function Blank() {
   const navigate = useNavigate();
-  const signed = useAppSelector((state) => state.auth?.signed);
 
   // at start redirect to initial page
   useEffect(() => {
-    if (signed) {
+    if (isAuthenticated()) {
       navigate(ROUTES.app.getLink('books'));
     } else {
       navigate(ROUTES.signIn.base);

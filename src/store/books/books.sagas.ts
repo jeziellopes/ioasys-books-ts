@@ -8,7 +8,6 @@ import {
   loadBooks,
   loadBooksError,
   loadBooksSuccess,
-  setBook,
   setPage,
 } from './books.ducks';
 
@@ -29,5 +28,4 @@ export function* watchSagas() {
   yield takeLatest(loginSuccess.type, loadBooksSaga);
   yield takeLatest(loadBooks.type, loadBooksSaga);
   yield takeLatest(setPage.type, loadBooksSaga);
-  yield takeLatest(loadBooksSuccess.type, setBook);
 }

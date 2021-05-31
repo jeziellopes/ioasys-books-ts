@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  ${({ theme }) => css``}
+  ${() => css`
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+  `}
 `;

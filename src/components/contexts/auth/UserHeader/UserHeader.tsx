@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React from 'react';
 import { useAppSelector } from 'hooks';
 import * as CS from 'components/structure';
 import * as S from './UserHeader.styles';

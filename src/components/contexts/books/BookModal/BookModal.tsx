@@ -7,6 +7,7 @@ export type BookModalProps = {
   children?: React.ReactChild;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const BookModal = ({ children }: BookModalProps) => {
   const { book } = useAppSelector((state) => state.books);
   const { show, handleClose } = useBookModal();

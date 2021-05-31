@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { logout as logoutAction } from 'store/auth/auth.ducks';
 import { useAppDispatch } from 'hooks';
 import { ROUTES } from 'constants/urls';

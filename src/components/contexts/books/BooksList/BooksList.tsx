@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { RootState } from 'store';
-import { useAppSelector } from 'hooks';
+import { setSelected } from 'store/books/books.ducks';
+import { useAppDispatch, useAppSelector } from 'hooks';
 import * as C from 'components/contexts';
 import * as CS from 'components/structure';
 import { Book } from 'interfaces/books';
@@ -11,13 +12,17 @@ export type BooksListProps = {
   children?: React.ReactChild;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const BooksList = ({ children }: BooksListProps) => {
   const books = useAppSelector((state: RootState) => state.books.data);
   const { id } = useParams();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    // if (id) showBook(id), [id];
-  });
+    if (id) {
+      dispatch(setSelected(id));
+    }
+  }, [dispatch, id]);
 
   return (
     <S.Wrapper>

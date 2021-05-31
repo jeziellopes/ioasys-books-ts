@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RootState } from 'store';
-import { loadBooks, setPage } from 'store/books/books.ducks';
+import { loadBooks, setBook, setPage } from 'store/books/books.ducks';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import BooksContext from 'contexts/books';
 
@@ -13,10 +13,15 @@ export type BooksProviderType = {
  */
 const BooksProvider = ({ children }: BooksProviderType) => {
   const [amount, setAmount] = useState(20);
-  const { data: books, loading, loaded, page } = useAppSelector(
+  const { data: books, loading, loaded, page, selected } = useAppSelector(
     (state: RootState) => state.books,
   );
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const book = books.data?.find((book) => book.id === selected) ?? null;
+    dispatch(setBook(book));
+  }, [dispatch, books, selected]);
 
   useEffect(() => {
     if (!loading && !loaded) dispatch(loadBooks());

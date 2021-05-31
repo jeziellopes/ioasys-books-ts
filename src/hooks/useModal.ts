@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from 'constants/urls';
-import { useBooks } from './';
 
 /**
  * Book Modal Hook

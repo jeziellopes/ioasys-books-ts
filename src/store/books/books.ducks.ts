@@ -6,7 +6,7 @@ export type BooksState = {
   book: Book | null;
   page: number;
   amount: number;
-  selected: number | null;
+  selected: string | null;
   loading: boolean;
   loaded: boolean;
   error: boolean;
@@ -24,19 +24,20 @@ const INITIAL_STATE: BooksState = {
 };
 
 export const setPage = createAction<number>('SET_PAGE');
-export const setBook = createAction('SET_BOOK');
+export const setSelected = createAction<string>('SET_SELECTED');
+export const setBook = createAction<Book | null>('SET_BOOK');
 export const loadBooks = createAction('LOAD_BOOKS');
 export const loadBooksError = createAction('LOAD_BOOKS_ERROR');
 export const loadBooksSuccess = createAction('LOAD_BOOKS_SUCCESS');
-export const selectBook = createAction('SELECT_BOOK');
 export const init = createAction('INIT_BOOKS');
 
 export default createReducer(INITIAL_STATE, {
   [setPage.type]: (state, action) => ({ ...state, page: action.payload }),
-  [setBook.type]: (state) => ({
+  [setSelected.type]: (state, action) => ({
     ...state,
-    book: state.selected ? state.data?.data[state.selected] : null,
+    selected: action.payload,
   }),
+  [setBook.type]: (state, action) => ({ ...state, book: action.payload }),
   [loadBooks.type]: (state) => ({ ...state, loading: true }),
   [loadBooksError.type]: (state) => ({ ...state, loading: false, error: true }),
   [loadBooksSuccess.type]: (state, action) => ({
