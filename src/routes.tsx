@@ -22,6 +22,7 @@ const AppRoutes = () => (
     <Routes>
       <PrivateRoute path={ROUTES.app.base}>
         <Route path={ROUTES.app.getLink('books')} element={<Books />} />
+        <Route path={ROUTES.app.getLink('book', ':id')} element={<Books />} />
       </PrivateRoute>
       <Route path="*" element={<Blank />} />
 

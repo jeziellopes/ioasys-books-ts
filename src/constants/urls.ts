@@ -20,6 +20,7 @@ export const ROUTES = {
   app: new Route('/', {
     root: '/',
     books: 'books',
+    book: 'book/:id',
   }),
   signIn: new Route('sign-in', {
     signIn: '/',
