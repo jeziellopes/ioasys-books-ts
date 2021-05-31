@@ -84,7 +84,7 @@ export const DetailsContainer = styled(Column)`
     }
     ::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background-color: ${({ theme }) => theme.colors.primary};
+      background-color: ${({ theme }) => theme.colors.primary.main};
     }
   }
 
@@ -131,7 +131,7 @@ export const BookTitle = styled.span`
 export const BookAuthor = styled.span`
   font-size: ${({ theme }) => theme.typography.sizes.xs};
   font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary.main};
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;

@@ -61,7 +61,7 @@ export const BookAuthor = styled.span`
   font-size: ${({ theme }) => theme.typography.sizes.xs};
   font-style: normal;
   font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary.main};
   letter-spacing: 0em;
   text-align: left;
 `;

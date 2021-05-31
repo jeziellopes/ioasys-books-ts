@@ -13,8 +13,8 @@ type UseFormType = {
 
 const useForm = (): UseFormType => {
   const [values, setValues] = useState({
-    email: 'desafio@ioasys.com.br',
-    password: '12341234',
+    email: '',
+    password: '',
   });
   const [error, setError] = useState(false);
   const [errors, setErrors] = useState<FormErrors | null>(null);

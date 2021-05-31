@@ -38,7 +38,7 @@ const GlobalStyles: GlobalStyleComponent<
       padding: 0;
       margin: 0;
       font-family: ${theme.typography.family.primary};
-      /* overflow: ${blockScroll ? 'hidden' : 'initial'}; */
+      overflow: ${blockScroll ? 'hidden' : 'initial'};
 
       ::-webkit-scrollbar {
         display: none;
