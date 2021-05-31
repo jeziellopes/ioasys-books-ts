@@ -1,5 +1,7 @@
+import { Navigate, useNavigate } from 'react-router';
 import { logout as logoutAction } from 'store/auth/auth.ducks';
 import { useAppDispatch } from 'hooks';
+import { ROUTES } from 'constants/urls';
 import * as S from './LogoutButton.styles';
 
 export type LogoutButtonProps = {
@@ -9,8 +11,12 @@ export type LogoutButtonProps = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const LogoutButton = ({ children }: LogoutButtonProps) => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
-  const logout = () => dispatch(logoutAction());
+  const logout = () => {
+    dispatch(logoutAction());
+    navigate(ROUTES.signIn.base);
+  };
 
   return (
     <S.Wrapper onClick={logout}>
