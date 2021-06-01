@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router';
 import { login } from 'store/auth/auth.ducks';
 import { useAppDispatch, useAppSelector, useForm } from 'hooks';
+import { isAuthenticated } from 'lib/contexts/auth';
 import { TextInput } from 'components/form';
 import { Logo, FormError } from 'components/structure';
 import { LogoHeader, LogoTitle } from 'components/structure/common';
 import { SignInType } from 'interfaces/auth';
 import { ROUTES } from 'constants/urls';
-import * as S from './SignIn.style';
+import * as S from './SignIn.styles';
 
 const SignIn = () => {
   const signed = useAppSelector((state) => state.auth?.signed);
@@ -17,7 +18,7 @@ const SignIn = () => {
   const {
     values: { email, password },
     error,
-    errors,
+    // errors,
     validated,
     handleChange,
   } = useForm();
@@ -25,7 +26,7 @@ const SignIn = () => {
   const signIn = (user: SignInType) => dispatch(login(user));
 
   useEffect(() => {
-    if (signed) navigate(ROUTES.app.getLink('books'));
+    if (isAuthenticated()) navigate(ROUTES.app.getLink('books'));
   }, [navigate, signed]);
 
   const handleSignIn = () => {

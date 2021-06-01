@@ -12,7 +12,10 @@ type UseFormType = {
 };
 
 const useForm = (): UseFormType => {
-  const [values, setValues] = useState({ email: '', password: '' });
+  const [values, setValues] = useState({
+    email: '',
+    password: '',
+  });
   const [error, setError] = useState(false);
   const [errors, setErrors] = useState<FormErrors | null>(null);
   const [isEmpty, setIsEmpty] = useState(true);

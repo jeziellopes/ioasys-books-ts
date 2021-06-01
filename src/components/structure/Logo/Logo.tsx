@@ -2,7 +2,7 @@ import * as S from './Logo.styles';
 
 export type LogoProps = {
   children?: React.ReactChild;
-  light: boolean;
+  light?: boolean;
 };
 
 export const Logo = ({ light }: LogoProps) => (

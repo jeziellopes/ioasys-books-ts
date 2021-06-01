@@ -5,3 +5,4 @@ export * from './shapes';
 export * from './layers';
 export * from './colors';
 export * from './sizes';
+export * from './shadows';
