@@ -1,8 +1,8 @@
-import { renderWithTheme } from 'lib/contexts/tests';
+import { renderWithProviders } from 'lib/contexts/tests';
 import { NextButton } from './NextButton';
 
 describe('<NextButton />', () => {
   it('should render the NextButton', () => {
-    const { container } = renderWithTheme(<NextButton />);
+    const { container } = renderWithProviders(<NextButton />);
   });
 });

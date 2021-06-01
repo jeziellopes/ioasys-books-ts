@@ -1,8 +1,8 @@
-import { renderWithTheme } from 'lib/contexts/tests';
+import { renderWithProviders } from 'lib/contexts/tests';
 import { CloseButton } from './CloseButton';
 
 describe('<CloseButton />', () => {
   it('should render the CloseButton', () => {
-    const { container } = renderWithTheme(<CloseButton />);
+    const { container } = renderWithProviders(<CloseButton />);
   });
 });
