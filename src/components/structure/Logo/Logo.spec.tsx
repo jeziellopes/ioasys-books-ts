@@ -1,8 +1,8 @@
-import { renderWithTheme } from 'lib/contexts/tests';
+import { renderWithProviders } from 'lib/contexts/tests';
 import { Logo } from './Logo';
 
 describe('<Logo />', () => {
   it('should render the Logo', () => {
-    const { container } = renderWithTheme(<Logo />);
+    const { container } = renderWithProviders(<Logo />);
   });
 });

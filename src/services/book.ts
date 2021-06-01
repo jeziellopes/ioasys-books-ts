@@ -21,7 +21,7 @@ class Book {
    * @returns
    */
   static normalizedAuthors(authors: string[]) {
-    const maxAuthors = authors.slice(0, 2);
+    const maxAuthors = authors && authors.length ? authors.slice(0, 2) : [];
     return maxAuthors.map(
       (author) =>
         `${Book.normalizedAuthor(

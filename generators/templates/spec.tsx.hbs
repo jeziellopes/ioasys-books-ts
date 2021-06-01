@@ -1,8 +1,8 @@
-import { renderWithTheme } from 'lib/contexts/tests';
+import { renderWithProviders } from 'lib/contexts/tests';
 import { {{pascalCase name}} } from './{{pascalCase name}}';
 
 describe('<{{pascalCase name}} />', () => {
   it('should render the {{pascalCase name}}', () => {
-    const { container } = renderWithTheme(<{{pascalCase name}} />);
+    const { container } = renderWithProviders(<{{pascalCase name}} />);
   });
 });
