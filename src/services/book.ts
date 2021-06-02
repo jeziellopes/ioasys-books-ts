@@ -53,8 +53,8 @@ class Book {
 
   static normalizedAuthor(
     author: string,
-    isLast: boolean,
-    manyAuthors: boolean,
+    isLast?: boolean,
+    manyAuthors?: boolean,
   ) {
     if (author.length <= 2) {
       return author;
