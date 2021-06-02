@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { isAuthenticated } from 'lib/contexts/auth';
 import { ROUTES } from 'constants/urls';
 
 /**
@@ -10,7 +11,11 @@ function Blank() {
 
   // at start redirect to initial page
   useEffect(() => {
-    navigate(ROUTES.signIn.base);
+    if (isAuthenticated()) {
+      navigate(ROUTES.app.getLink('books'));
+    } else {
+      navigate(ROUTES.signIn.base);
+    }
   });
 
   return <></>;
