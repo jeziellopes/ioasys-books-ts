@@ -7,6 +7,5 @@ describe('<FormError />', () => {
     const { container } = renderWithProviders(<FormError />);
 
     expect(findByText(container, 'Email e/ou senha inválidos'));
-    expect(container.firstChild).toMatchSnapshot();
   });
 });
